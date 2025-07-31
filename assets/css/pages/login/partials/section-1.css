@@ -1,0 +1,149 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/imgs/Gradiante\ fundo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-card{
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border: solid 1px rgba(143, 140, 140, 0.1);
+    padding: 25px 35px ;
+    text-align:center;
+    width: 400px;
+    color: var(--marrom)
+}
+
+.icon{
+    background-color: var(--branco-bege);
+    padding: 16px;
+    border-radius: 12px;
+    margin: 0 auto 36px auto;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+h1{
+    font-family: fontBold;
+    font-size: 24px;
+    margin-bottom: -5px;
+    font-weight: normal; /* evita exagero de peso */
+}
+
+p{
+    font-family: fontRegular;
+    font-size: 16px;
+    color: var(--marrom-claro);
+    padding: 20px;
+}
+
+.input-fild{
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.input-fild input{
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border-radius: 12px;
+    border: none;
+    background-color:  var(--branco-bege);
+    color: var(--cinza-claro);
+    font-size: 16px;
+}
+
+.input-fild img{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+#togglePassword{
+    cursor: pointer;
+}
+
+.options{
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.options a{
+    font-family: fontBold;
+    color: var(--marrom);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.options a:hover{
+    text-decoration: underline;
+    color: var(--preto);
+}
+
+.input-fild input:focus {
+    outline: none; 
+    border: 2px solid var(--marrom); 
+    box-shadow: 0 0 0 3px rgba(143, 140, 140, 0.2); 
+    transition: all 0.2s ease;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--marrom);
+    color: var(--branco-bege);
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 03s ease;
+}
+
+button:hover{
+    background-color: var(--dark-laranja);
+}
+
+.texto-registro{
+    color:var(--marrom);
+    font-size: 14px;
+}
+
+.texto-registro a{
+    font-family: fontBold;
+    color: var(--marrom);
+    text-decoration: none;
+}
+
+.texto-registro a:hover{
+    text-decoration: underline;
+    color: var(--marrom);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-site {
+    width: 180px; /* ajuste o tamanho da logo */
+    margin-bottom: -30px; /* Altura da logo */
+    z-index: 10;
+}

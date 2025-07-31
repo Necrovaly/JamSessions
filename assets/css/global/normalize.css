@@ -1,0 +1,17 @@
+/* 
+    normalize.css
+    Este arquivo remove os estilos padrões aplicados pelos navegadores,
+    garantindo uma base consistente para o layout.
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
+    <link rel="stylesheet" href="/assets/css/pages/login.css">
+</head>
+
+<body>
+    <section class="login-container">
+        <img src="/assets/imgs/logo.svg" alt="Logo do site" class="logo-site" />
+        <div class="login-card">
+            <div class="icon">
+                <img src="/assets/imgs/log-in.svg" alt="login-icon" />
+            </div>
+            <h1>Logue com e-mail</h1>
+            <p>Faça login para ter acesso completo à plataforma </p>
+            <form>
+                <div class="input-fild">
+                    <input type="email" placeholder="E-mail" required />
+                </div>
+                <div class="input-fild">
+                    <input type="password" id="password" placeholder="Senha" required>
+                    <img src="/assets/imgs/eye-off.svg" alt="mostrar-senha" id="togglePassword" />
+                </div>
+
+                <div class="options">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="texto-registro">Não possui conta? <a href="cadastro.html" >Registre-se</a></p>
+        </div>
+    </section>
+    <script src="/assets/js/olho-magico.js"></script>
+</body>
+
+</html>
