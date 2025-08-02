@@ -1,0 +1,56 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('/assets/imgs/Gradiante fundo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: fontBold;
+}
+
+/* Wrapper que contém sidebar + conteúdo */
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar fixa */
+.sidebar-menu {
+  width: 250px;
+  height: 100vh;
+  background: #eee; /* só pra visualizar */
+  flex-shrink: 0;
+}
+
+/* Área principal que ocupa o resto */
+.bg-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: transparent; /* transparente também */
+}
+/* Container central do conteúdo */
+.main-content {
+  width: 100%;
+  max-width: 1400px;
+  height: 90vh;
+  background-color: var(--branco-bege, #fff);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 2rem;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}

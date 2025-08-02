@@ -1,0 +1,35 @@
+/* 
+    normalize.css
+    Este arquivo remove os estilos padrões aplicados pelos navegadores,
+    garantindo uma base consistente para o layout.
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    display: flex;
+}
+
+body {
+  background-image: url('/assets/imgs/Gradiante fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
