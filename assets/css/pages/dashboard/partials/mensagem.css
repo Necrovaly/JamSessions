@@ -3,9 +3,9 @@
   width: 100%;
   max-width: 1400px;
   height: 90vh; /* altura da área visível, ajuste se quiser */
-  background-color: var(--branco-bege, #fff);
+  background-color: var(--branco-bege);
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
   padding: 0; /* vamos controlar padding dentro do chat-layout */
   overflow: hidden; /* importante para evitar scroll duplo */
   box-sizing: border-box;
@@ -25,7 +25,7 @@
 /* Lista de chats (barra lateral esquerda) */
 .chat-list {
   width: 25%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--branco-bege);
   border-radius: 1rem;
   padding: 1rem;
   overflow-y: auto;
@@ -45,7 +45,7 @@
 
 .chat-user:hover,
 .chat-user:focus {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--cinza-claro);
   outline: none;
 }
 
@@ -65,13 +65,13 @@
 .chat-preview {
   margin: 0;
   font-size: 0.85rem;
-  color: #000000;
+  color: var(--preto-claro);
 }
 
 /* Janela do chat (lado direito) */
 .chat-window {
   width: 75%;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--branco-bege);
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
@@ -85,7 +85,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--preto);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   flex-shrink: 0;
@@ -120,7 +120,7 @@
 
 .message-time {
   font-size: 0.75rem;
-  color: #aaa;
+  color: var(--light);
   margin-top: 0.2rem;
   display: block;
 }
@@ -137,7 +137,7 @@
   flex-grow: 1;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--cinza-claro);
   font-size: 1rem;
 }
 
@@ -152,17 +152,13 @@
   transition: background-color 0.3s ease;
 }
 
-.chat-input button:hover {
-  background-color: #2563eb;
-}
 
 .chat-list {
   width: 25%;
-  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem 0 0 1rem; /* só arredonda do lado esquerdo */
   padding: 1rem;
   overflow-y: auto;
   box-sizing: border-box;
 
-  border-right: 1px solid rgba(154, 93, 93, 0.2); /* linha fina e discreta */
+  border-right: 1px solid var(--marrom2); /* linha fina e discreta */
 }
