@@ -1,18 +1,23 @@
 .container-logo img {
-    max-width: 120px;
+    max-width: 180px;
     height: auto;
     margin: 0 auto;
     display: block;
 }
 
-.sidebar-menu{
-    width: 250px;
+.sidebar-menu {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.sidebar-menu {
+  width: 250px;
   height: 100vh;
+  background-color: var(--branco-bege); /* transparente para mostrar fundo do body */
+  flex-shrink: 0;
   padding: 1.5rem;
   color: var(--preto);
-  display: inline-flex;
-  background-image: url(/assets/imgs/Gradiante\ fundo.png);
-  background-size: cover;
+  display: flex;
   flex-direction: column;
   font-family: fontRegular;
 }
@@ -22,10 +27,11 @@
     height: 18px;
 }
 
-.container-logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container-logo {
+  margin-top: -2rem; /* diminua para subir mais, por exemplo 0.2rem ou 0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar-menu .nav-links{
@@ -34,6 +40,7 @@
     gap: 1rem;
     width: 100%;
     margin-top: 2rem;
+    height: 82vh;
 
 }
 
@@ -47,7 +54,7 @@
     gap: 0.5rem;
 }
 
-.nav-links a{
+.nav-links a, .logout a{
     border-radius: 12px;
     transition-property: color, background-color, fill;
     transition-duration: 0.3s;
@@ -59,3 +66,100 @@
     background-color: var(--branco-bege);
     fill: var(--preto);
 }
+
+.logout {
+  margin-top: auto; 
+}
+
+.container-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+.user-content {
+  display: flex;
+  flex-direction: column;
+  white-space: normal; /* para permitir quebra de linha se precisar */
+  flex-grow: 1; /* para ocupar o espaço entre imagem e logout */
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 14px;
+  font-family: fontBold;
+  color: var(--preto);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-email {
+  font-size: 11px;
+  color: var(--cinza-claro);
+  line-height: 1;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.user-img img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.user-img {
+  flex-shrink: 0;
+}
+
+.logout-link {
+  flex-shrink: 0;
+}
+
+.logout li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.user-info {
+  position: absolute;
+  left: 0%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none; /* impede clique se sobrepor */
+}
+
+.logout-section {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0rem;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--branco-bege); /* opcional */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  font-family: fontBold;
+  color: var(--preto);
+  text-align: center;
+}
+

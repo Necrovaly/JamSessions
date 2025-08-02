@@ -4,23 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Mensagem</title>
 
     <!-- CSS Global com reset e variáveis -->
     <link rel="stylesheet" href="/assets/css/global/global.css" />
 
     <!-- CSS Específico da página -->
     <link rel="stylesheet" href="/assets/css/pages/dashboard/dashboard.css" />
+    <link rel="stylesheet" href="/assets/css/pages/dashboard/partials/mensagem.css" />
+
 
     <!-- Ícones Boxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-
-    <link rel="stylesheet" href="/assets/css/pages/dashboard/dashboard.css">
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </head>
 
@@ -38,7 +34,7 @@
 
             <ul class="nav-links">
                 <li>
-                    <a href="mensagem.html" class="selected">
+                    <a href="#" class="selected">
                         <box-icon type='solid' name='send'></box-icon>
                         <span class="nav-text">Mensagem</span>
                     </a>
@@ -60,6 +56,7 @@
                         <box-icon name='music' type='solid'></box-icon>
                         <span class="nav-text">Bandas</span>
                     </a>
+                    </li>
                 <li>
                     <a href="#" class="selected">
                         <box-icon name='cog' type='solid'></box-icon>
@@ -81,14 +78,49 @@
             </div>
         </aside>
 
-        <main class="bg-main">
-            <section class="main-content">
-                <div class="main-box">
+<main class="bg-main">
+ <section class="main-content">
+  <div class="chat-layout">
+    <!-- Lista de conversas (lado esquerdo) -->
+    <div class="chat-list">
+      <div class="chat-user" tabindex="0">
+        <img src="/assets/imgs/bot.svg" alt="Bot" class="chat-avatar" />
+        <div>
+          <p class="chat-name">Bot do Site</p>
+          <p class="chat-preview">Bem-vindo! Precisa de ajuda?</p>
+        </div>
+      </div>
+      <!-- Mais chats aqui -->
+    </div>
 
-                </div>
-            <h1>Teste</h1>
-            </section>
-        </main>
+    <!-- Janela do chat (lado direito) -->
+    <div class="chat-window">
+      <div class="chat-header">
+        <img src="/assets/imgs/bot.svg" alt="Bot" class="chat-avatar" />
+        <h3>Bot do Site</h3>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message bot">
+          <p>Olá! Seja bem-vindo ao nosso sistema. Como posso te ajudar hoje?</p>
+          <span class="message-time">09:00</span>
+        </div>
+      </div>
+
+      <form class="chat-input" id="chat-form">
+        <input
+          type="text"
+          placeholder="Digite sua mensagem..."
+          id="chat-input-field"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  </section>
+</main>
     </div>
 
 </body>
