@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de login</title>
+    <link rel="stylesheet" href="{% static 'assets/css/pages/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/global/global.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/pages/login/partials/section-1.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/global/font.css' %}" />
+  </head>
+
+  <body>
+    <section class="login-container">
+      <img
+        src="{% static 'assets/imgs/logo.svg' %}"
+        alt="Logo do site"
+        class="logo-site"
+      />
+
+      <div class="login-card">
+        <div class="icon">
+          <img src="{% static 'assets/imgs/log-in.svg' %}" alt="login-icon" />
+        </div>
+
+        <h1>Logue com e-mail</h1>
+        <p>Faça login para ter acesso completo à plataforma</p>
+
+        <div class="input-fild">
+          <input type="email" placeholder="E-mail" required />
+        </div>
+
+        <div class="input-fild">
+          <input type="password" id="password" placeholder="Senha" required />
+          <img
+            src="{% static 'assets/imgs/eye-off.svg' %}"
+            alt="mostrar-senha"
+            id="togglePassword"
+          />
+        </div>
+
+        <div class="options">
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+        <form id="login-form">
+          <button type="submit">Login</button>
+        </form>
+
+        <p class="texto-registro">
+          Não possui conta?
+          <a href="{% url 'cadastro' %}">Registre-se</a>
+        </p>
+      </div>
+    </section>
+
+    <script>
+      const passwordInput = document.getElementById("password");
+      const togglePassword = document.getElementById("togglePassword");
+
+      // Passa os caminhos corretos para o JS usando variáveis do template
+      const eyeOnSrc = "{% static 'assets/imgs/eye-on.svg' %}";
+      const eyeOffSrc = "{% static 'assets/imgs/eye-off.svg' %}";
+
+      togglePassword.addEventListener("mousedown", function () {
+        passwordInput.type = "text";
+        togglePassword.src = eyeOnSrc;
+      });
+
+      togglePassword.addEventListener("mouseup", function () {
+        passwordInput.type = "password";
+        togglePassword.src = eyeOffSrc;
+      });
+
+      togglePassword.addEventListener("mouseleave", function () {
+        passwordInput.type = "password";
+        togglePassword.src = eyeOffSrc;
+      });
+    </script>
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // previne o envio padrão do formulário
+          window.location.href = "{% url 'dashboard' %}"; // redireciona para a dashboard
+        });
+    </script>
+  </body>
+</html>

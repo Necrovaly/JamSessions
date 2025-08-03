@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+
+  <!-- CSS Global com reset e variáveis -->
+  <link rel="stylesheet" href="{% static 'assets/css/global/global.css' %}" />
+
+  <!-- CSS Específico da página -->
+  <link rel="stylesheet" href="{% static 'assets/css/pages/dashboard/dashboard.css' %}" />
+
+  <!-- Ícones Boxicons -->
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+
+<body style="background-image: url('{% static 'assets/imgs/Gradiante fundo.png' %}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
+  <div class="layout-wrapper">
+    <aside class="sidebar-menu">
+      <a href="#" class="container-logo">
+        <img src="{% static 'assets/imgs/logo.svg' %}" alt="Logo do sistema">
+      </a>
+      <div class="profile-sidebar">
+        <img src="{% static 'assets/imgs/Foto perfil.svg' %}" alt="Foto de perfil" class="profile-img">
+        <p class="profile-name">Leonardo Santos</p>
+      </div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="{% url 'mensagem' %}" class="selected">
+            <box-icon type='solid' name='send'></box-icon>
+            <span class="nav-text">Mensagem</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="selected">
+            <box-icon type='solid' name='store'></box-icon>
+            <span class="nav-text">Marketplace</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="selected">
+            <box-icon type='solid' name='image'></box-icon>
+            <span class="nav-text">Galeria</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="selected">
+            <box-icon name='music' type='solid'></box-icon>
+            <span class="nav-text">Bandas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="selected">
+            <box-icon name='cog' type='solid'></box-icon>
+            <span class="nav-text">Configurações</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="container-user">
+        <div class="user-img">
+          <img src="{% static 'assets/imgs/Ellipse 2.svg' %}" alt="Imagem do usuário" />
+        </div>
+        <div class="user-content">
+          <p class="user-name">Leonardo Santos</p>
+          <p class="user-email">leonardo@ufsc.com</p>
+        </div>
+        <a href="{% url 'login' %}" class="logout-link">
+          <box-icon name='log-out'></box-icon>
+        </a>
+      </div>
+    </aside>
+
+    <main class="bg-main">
+      <section class="main-content">
+        <div class="main-box">
+          <!-- Barra de Pesquisa -->
+          <div class="search-bar">
+            <input type="text" placeholder="Pesquisar na Jam..." />
+            <button><box-icon name='search'></box-icon></button>
+          </div>
+
+          <!-- Carrossel de Imagens -->
+          <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="slide">
+                <img src="{% static 'assets/imgs/frame1.png' %}" alt="Imagem 1" />
+                <div class="slide-title">Ache sua banda 🤘</div>
+              </div>
+              <div class="slide">
+                <img src="{% static 'assets/imgs/frame2.png' %}" alt="Imagem 2" />
+                <div class="slide-title">Milhares de músicos para negociar equipamentos 🎸</div>
+              </div>
+              <div class="slide">
+                <img src="{% static 'assets/imgs/frame3.png' %}" alt="Imagem 3" />
+                <div class="slide-title">Encontre os melhores equipamentos para você 🥁</div>
+              </div>
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recomendados para você -->
+        <h2 class="recomend-title">
+          Recomendados para você!
+          <box-icon name='store' type='solid' color="var(--marrom)" size="md"></box-icon>
+        </h2>
+        <div class="recommendations">
+          <div class="card">
+            <img src="{% static 'assets/imgs/item1.png' %}" alt="Item 1" />
+            <p>Guitarras</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'assets/imgs/item2.png' %}" alt="Item 2" />
+            <p>Baterias</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'assets/imgs/item3.png' %}" alt="Item 3" />
+            <p>Microfones</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'assets/imgs/item4.png' %}" alt="Item 4" />
+            <p>Teclados</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'assets/imgs/item5.png' %}" alt="Item 5" />
+            <p>Baixos</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{% static 'assets/js/carousel.js' %}"></script>
+</body>
+
+</html>

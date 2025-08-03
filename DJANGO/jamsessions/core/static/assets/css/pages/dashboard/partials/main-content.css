@@ -1,0 +1,217 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('/assets/imgs/Gradiante fundo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: fontBold;
+}
+
+/* Wrapper que contém sidebar + conteúdo */
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar fixa */
+.sidebar-menu {
+  width: 250px;
+  height: 100vh;
+  background: #eee; /* só pra visualizar */
+  flex-shrink: 0;
+}
+
+/* Área principal que ocupa o resto */
+.bg-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: transparent; /* transparente também */
+}
+/* Container central do conteúdo */
+.main-content {
+  width: 100%;
+  max-width: 1400px;
+  height: 90vh;
+  background-color: var(--branco-bege, #fff);
+  border-radius: 20px;
+  box-shadow: 0 0 15px var(--preto);
+  padding: 2rem;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 900px; /* para acompanhar o carrossel e não ficar maior que o conteúdo */
+  border-bottom: 2px solid var(--marrom-claro); /* a linha fina */
+  margin: 0 auto 2rem auto; /* centralizar e margem abaixo */
+  padding-bottom: 0.3rem; /* espaçamento para a linha */
+  display: flex;
+  align-items: center;
+  background: transparent; /* sem fundo */
+  border-radius: 0; /* sem arredondamento */
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: var(--marrom);
+  padding: 0;
+  height: 2rem;
+  text-align: center;
+}
+
+.search-bar input::placeholder {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--cinza-claro);
+  opacity: 0.7;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--marrom);
+  padding-left: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.carousel {
+  width: 100%;
+  max-width: 900px;
+  height: auto; /* Ajusta a altura automaticamente */
+  margin: 0 auto 2rem auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;  /* 3 imagens */
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: auto;  /* Mantém a proporção da imagem */
+  object-fit: cover; /* Pode até tirar isso se usar height:auto */
+  flex-shrink: 0;
+  display: block;
+  border: none;
+}
+/* Recomendados */
+.recomend-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: var(--marrom);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+
+  margin-left: 2rem; /* ajuste conforme necessário */
+}
+.recommendations {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.recommendations .card {
+  flex: 1 1 200px;
+  max-width: 200px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+  color: var(--marrom);
+}
+
+.recommendations .card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #bbb; /* cor das bolinhas inativas */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: var(--marrom-claro); /* cor da bolinha ativa */
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  position: relative;
+  min-width: 100%; /* cada slide ocupa 100% da largura */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+.slide-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(38, 8, 8, 0.85); /* var(--marrom-claro) semi-transparente */
+  color: var(--branco-bege, #fff);
+  padding: 15px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-sizing: border-box;
+  user-select: none;
+  pointer-events: none;
+}

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'fontBold';
+  src: url('../../fonts/Inter_18pt-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'fontRegular';
+  src: url('../../fonts/Inter_18pt-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'fontRegular', sans-serif;
+}

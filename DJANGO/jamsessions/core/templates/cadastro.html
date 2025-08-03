@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de cadastro</title>
+    <link rel="stylesheet" href="{% static 'assets/css/pages/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/global/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/pages/login/partials/section-1.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/global/font.css' %}" />
+</head>
+
+<body>
+    <section class="login-container">
+        <img src="{% static 'assets/imgs/logo.svg' %}" alt="Logo do site" class="logo-site" />
+        <div class="login-card">
+            <div class="icon">
+                <img src="{% static 'assets/imgs/log-in.svg' %}" alt="login-icon" />
+            </div>
+            <h1>Cadastre-se</h1>
+            <p>Realize seu cadastro para fazer parte da nossa plataforma!</p>
+            <form>
+                <div class="input-fild">
+                    <input type="email" placeholder="Seu melhor E-mail" required />
+                </div>
+                <div class="input-fild">
+                    <input type="password" id="password1" placeholder="Insira uma senha" required />
+                    <img
+                        src="{% static 'assets/imgs/eye-off.svg' %}"
+                        alt="mostrar-senha"
+                        id="togglePassword1"
+                    />
+                </div>
+                <div class="input-fild">
+                    <input type="password" id="password2" placeholder="Repetir a senha" required />
+                    <img
+                        src="{% static 'assets/imgs/eye-off.svg' %}"
+                        alt="mostrar-senha"
+                        id="togglePassword2"
+                    />
+                </div>
+
+                <button type="submit">Cadastre-se</button>
+            </form>
+
+            <p class="texto-registro">
+                Já possui conta? 
+                <a href="{% url 'login' %}">Login!</a>
+            </p>
+        </div>
+    </section>
+
+<script>
+  // Função para adicionar o efeito "olho mágico" em múltiplos campos de senha
+  function setupTogglePassword(passwordId, toggleId) {
+    const passwordInput = document.getElementById(passwordId);
+    const togglePassword = document.getElementById(toggleId);
+    const eyeOnSrc = "{% static 'assets/imgs/eye-on.svg' %}";
+    const eyeOffSrc = "{% static 'assets/imgs/eye-off.svg' %}";
+
+    togglePassword.addEventListener("mousedown", function () {
+      passwordInput.type = "text";
+      togglePassword.src = eyeOnSrc;
+    });
+
+    togglePassword.addEventListener("mouseup", function () {
+      passwordInput.type = "password";
+      togglePassword.src = eyeOffSrc;
+    });
+
+    togglePassword.addEventListener("mouseleave", function () {
+      passwordInput.type = "password";
+      togglePassword.src = eyeOffSrc;
+    });
+  }
+
+  // Configura os dois campos de senha
+  setupTogglePassword("password1", "togglePassword1");
+  setupTogglePassword("password2", "togglePassword2");
+</script>
+</body>
+
+</html>
